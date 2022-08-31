@@ -1,7 +1,19 @@
 import User from './entities/user';
+import StreamingService from './entities/streaming-service';
+
+const testStreamingService = new StreamingService('Netflix', [
+  'DED PULL',
+  'Jack Sparrow',
+]);
+
+// console.log(testStreamingService);
 
 const testUser = new User();
 
-testUser.subscribe('Netflix');
+testUser.subscribe(testStreamingService);
 
-console.log(testUser.subscriptions);
+testUser.subscriptions[0].watch('Jack Sparrow');
+testUser.subscriptions[0].watch('Jack Sparrow');
+testUser.subscriptions[0].watch('Jack Sparrow');
+
+console.log(testStreamingService.viewsByShowNames);
