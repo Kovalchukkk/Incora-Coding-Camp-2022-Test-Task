@@ -6,6 +6,11 @@ export default class Subscription {
     this.#streamingService = streamingService;
   }
 
+  // getter for private attribute #streamingService
+  get streamingService() {
+    return this.#streamingService;
+  }
+
   watch(showName) {
     if (this.#streamingService.shows.find(show => show.name === showName)) {
       let views = 0;
@@ -25,12 +30,22 @@ export default class Subscription {
   }
 
   getRecommendationTrending() {
-    //TODO
-    // getMostViewedShowsOfYear();
+    const randomNumber = Math.floor(Math.random() * 10);
+    const shows = this.#streamingService.getMostViewedShowsOfYear(2022);
+
+    if (shows[randomNumber] !== undefined) {
+      return shows[randomNumber];
+    }
+    return 'There are no shows right now!';
   }
 
   getRecommendationByGenre(genre) {
-    //TODO
-    // getMostViewedShowsOfGenre();
+    const randomNumber = Math.floor(Math.random() * 10);
+    const shows = this.#streamingService.getMostViewedShowsOfGenre(genre);
+
+    if (shows[randomNumber] !== undefined) {
+      return shows[randomNumber];
+    }
+    return 'There are no shows right now!';
   }
 }

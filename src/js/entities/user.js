@@ -5,6 +5,14 @@ export default class User {
   #subscriptions = [];
 
   subscribe(streamingService) {
+    if (
+      this.#subscriptions.find(
+        subscription =>
+          subscription.streamingService.name === streamingService.name
+      )
+    ) {
+      return `You have already subscribed to ${streamingService.name}`;
+    }
     const subscription = new Subscription(streamingService);
     this.#subscriptions.push(subscription);
     return subscription;
