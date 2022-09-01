@@ -8,4 +8,16 @@ export default class StreamingService {
     this.#name = name;
     this.#shows = [...shows];
   }
+
+  addShow(show) {
+    this.#shows.push(show);
+  }
+
+  getMostViewedShowsOfYear(year) {
+    //TODO
+  }
+
+  getMostViewedShowsOfGenre(genre) {
+    //TODO
+  }
 }

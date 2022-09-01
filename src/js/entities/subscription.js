@@ -1,5 +1,3 @@
-import StreamingService from './streaming-service';
-
 export default class Subscription {
   // private attribute
   #streamingService;
