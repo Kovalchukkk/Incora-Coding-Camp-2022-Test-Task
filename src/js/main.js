@@ -60,3 +60,6 @@ console.log(testStreamingService.viewsByShowNames);
 console.log(testStreamingService.shows);
 
 console.log(testStreamingService.getMostViewedShowsOfYear(2003)); // [Movie]
+console.log(
+  testStreamingService.getMostViewedShowsOfGenre('science fiction sitcom')
+); // [Series]
