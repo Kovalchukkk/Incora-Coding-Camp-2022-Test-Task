@@ -1,7 +1,6 @@
 export default class Show {
-  // private attributes
-  #name;
-  #genre = {};
-  #releaseDate;
+  name;
+  genre = {};
+  releaseDate;
   getDuration() {}
 }

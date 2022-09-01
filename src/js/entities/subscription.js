@@ -7,15 +7,21 @@ export default class Subscription {
   }
 
   watch(showName) {
-    console.log(`Watching ${showName}! `);
-
-    let views = 0;
-    if (this.#streamingService.viewsByShowNames.get(showName) !== undefined) {
-      views = this.#streamingService.viewsByShowNames.get(showName) + 1;
-      this.#streamingService.viewsByShowNames.set(showName, views);
-      return;
+    if (this.#streamingService.shows.find(show => show.name === showName)) {
+      let views = 0;
+      if (this.#streamingService.viewsByShowNames.get(showName) !== undefined) {
+        views = this.#streamingService.viewsByShowNames.get(showName) + 1;
+        this.#streamingService.viewsByShowNames.set(showName, views);
+        return;
+      }
+      this.#streamingService.viewsByShowNames.set(showName, 1);
+    } else {
+      console.log(
+        `Can't find '${showName}' in streaming service ${
+          this.#streamingService.name
+        }`
+      );
     }
-    this.#streamingService.viewsByShowNames.set(showName, 1);
   }
 
   getRecommendationTrending() {
