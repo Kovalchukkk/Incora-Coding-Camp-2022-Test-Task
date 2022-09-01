@@ -61,6 +61,7 @@ testStreamingService.addShow(testMovie1);
 testStreamingService.addShow(testMovie2);
 testStreamingService.addShow(testMovie3);
 testStreamingService.addShow(testSeries);
+console.log(testStreamingService.addShow(testSeries)); // 'Rick and Morty' already exists in Netflix
 
 const testUser = new User();
 
@@ -75,7 +76,7 @@ testUser.subscriptions[0].watch(testMovie2.name);
 testUser.subscriptions[0].watch(testMovie2.name);
 testUser.subscriptions[0].watch(testMovie3.name);
 testUser.subscriptions[0].watch(testMovie3.name);
-testUser.subscriptions[0].watch('Very interesting show');
+testUser.subscriptions[0].watch('Very interesting show'); // Can't find 'Very interesting show' in streaming service Netflix
 testUser.subscriptions[0].watch(testSeries.name);
 
 console.log(testStreamingService.viewsByShowNames);

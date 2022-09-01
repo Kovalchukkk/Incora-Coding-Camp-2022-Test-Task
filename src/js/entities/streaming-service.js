@@ -9,6 +9,9 @@ export default class StreamingService {
   }
 
   addShow(show) {
+    if (this.#shows.find(showEl => showEl.name === show.name)) {
+      return `'${show.name}' already exists in ${this.#name}`;
+    }
     this.#shows.push(show);
   }
 
