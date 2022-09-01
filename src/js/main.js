@@ -57,3 +57,6 @@ testUser.subscriptions[0].watch('Very interesting show');
 testUser.subscriptions[0].watch(testSeries.name);
 
 console.log(testStreamingService.viewsByShowNames);
+console.log(testStreamingService.shows);
+
+console.log(testStreamingService.getMostViewedShowsOfYear(2003)); // [Movie]
